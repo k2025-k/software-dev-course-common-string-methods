@@ -1,3 +1,54 @@
+//Activity 1: Searching Strings
+
+let phrase="Learning JavaScript is fun!";
+console.log(phrase.includes("JavaScript"));
+console.log(phrase.indexOf("fun")); 
+//Ouputs:[true
+//23]
+
+//Activity 2:[Transforming Strings]
+
+let phraseTwo=" CODE BOOTCAMP ";
+let lowerCasePhrase=phraseTwo.toLowerCase();
+let phraseTwoTrim=lowerCasePhrase.trim();
+let newPhraseTwo=phraseTwoTrim.replace("bootcamp", "JavaScript");
+console.log(newPhraseTwo); 
+//Output:[code JavaScript]
+
+//Activity 3: Breaking Apart a Sentence
+let phraseThree="Coding is fun and educational";
+words=phraseThree.split(" ");
+console.log(words);
+//Output:['Coding', 'is', 'fun', 'and', 'educational']
+
+//Activity 4:Retrieving Substrings
+let phraseFour="Bootcamp";
+let retrieveFirst=phraseFour.charAt(0);
+let extractC=phraseFour.slice(4);
+console.log (retrieveFirst);
+console.log(extractC);
+//Output [B
+//camp]
+
+//Advanced Challenge
+let str=`Customer: John Doe
+Order: Apple, Banana, Grape
+Total: $20.50`
+console.log(str);
+let custName=str.slice(9,18);
+console.log(`Name extract: ${custName}`);
+let orderEx=str.slice(25, 46);
+let orderArr=orderEx.split(",");
+console.log (`Order extract${orderArr}`);
+let priceEx=str.slice(47);
+let upPrice=priceEx.toUpperCase();
+console.log(upPrice);
+//Output [Customer: John Doe
+//Order: Apple, Banana, Grape
+//Total: $20.50
+//Name extract:  John Doe]
+//Order extract Apple, Banana, Grape
+//TOTAL: $20.50
 /*
 
 Practice Problem #1
@@ -69,23 +120,35 @@ Complete the following tasks and assign the results to the specified variables. 
 let inputString = "  Welcome to the Coding Bootcamp! Learn JavaScript today.  ";
 
 // 1. Searching
-let hasJavaScript; // Your code here
-let codingPosition; // Your code here
-let startsWithWelcome; // Your code here
-let endsWithToday; // Your code here
+let hasJavaScript=inputString.includes("JavaScript"); // Your code here
+console.log(`Does string have Javascript? ${hasJavaScript}`);//Output Does string have Javascript? true
+let codingPosition=inputString.indexOf("Coding");; // Your code here
+console.log(`Position of "Coding": ${codingPosition}`); //Output Position of "Coding": 17
+let startsWithWelcome=inputString.startsWith("Welcome"); // It doesn't the string begins with a space.
+console.log(`String starts with "Welcome": ${startsWithWelcome}`);//String starts with "Welcome": false
+let endsWithToday=inputString.endsWith("today."); // It doesn't, the string ends with a space.
+console.log(`String ends with "today.": ${endsWithToday}`);//String ends with "today.": false
+
 
 // 2. Transforming
-let lowercaseString; // Your code here
-let uppercaseString; // Your code here
-let trimmedString; // Your code here
-let replacedString; // Your code here
+let lowercaseString= inputString.toLowerCase();
+console.log(`String to Lowercase: ${lowercaseString}`); //Output String to Lowercase:   welcome to the coding bootcamp! learn javascript today.  
+let uppercaseString=inputString.toUpperCase();  
+console.log(`String to UpperCase: ${uppercaseString}`);//String to UpperCase:   WELCOME TO THE CODING BOOTCAMP! LEARN JAVASCRIPT TODAY. 
+let trimmedString= inputString.trim();
+console.log(`Trimmed string: ${trimmedString}`);//Trimmed string: Welcome to the Coding Bootcamp! Learn JavaScript today. 
+let replacedString=(inputString.replace("JavaScript", "coding"));
+console.log(`Replaced with Coding: ${replacedString}`);//Replaced with Coding:   Welcome to the Coding Bootcamp! Learn coding today. 
 
 // 3. Breaking Apart
-let wordsArray; // Your code here
+let wordsArray=inputString.split(" "); // Your code here
+console.log(`This is words split ${wordsArray}`); //Output This is words split ,,Welcome,to,the,Coding,Bootcamp!,Learn,JavaScript,today.,,
 
 // 4. Retrieving
-let firstCharacter; // Your code here
-let extractedBootcamp; // Your code here
+let firstCharacter=trimmedString.charAt();
+console.log(`First character of trim: ${firstCharacter}`);//Output First character of trimm: W
+let extractedBootcamp=inputString.slice(24,32); 
+console.log(`Extracted Word: ${extractedBootcamp}`);//Output Extracted Word: Bootcamp
 
 // Log all results
 console.log({
